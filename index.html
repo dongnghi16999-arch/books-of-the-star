@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books Of The Star</title>
+
 <style>
 * {
     margin: 0;
@@ -7,13 +14,12 @@
 
 html, body {
     width: 100%;
-    height: 100vh;
-    overflow: hidden; /* Khóa chặt không cho cuộn dọc và ngang */
     font-family: Arial, sans-serif;
+    background-color: #041423;
 }
 
 .hero {
-    height: 100vh; /* Dùng height tuyệt đối thay vì min-height */
+    min-height: 100vh;
     width: 100%;
     background:
         linear-gradient(
@@ -27,7 +33,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 5%;
+    padding: 50px 5%;
 }
 
 .hero-content {
@@ -41,7 +47,7 @@ html, body {
     color: #D5B77A;
     font-size: clamp(11px, 2vw, 14px);
     letter-spacing: clamp(2px, 0.5vw, 5px);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     line-height: 1.4;
 }
 
@@ -53,7 +59,7 @@ h1 {
 }
 
 .description {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: clamp(13px, 1.8vw, 15px);
     letter-spacing: 1px;
     line-height: 1.5;
@@ -62,7 +68,7 @@ h1 {
 
 .button {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 12px 28px;
     border: 1px solid #D5B77A;
     color: white;
@@ -77,3 +83,30 @@ h1 {
     color: #102637;
 }
 </style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="subtitle">
+            KHÁM PHÁ THẾ GIỚI CỦA NHỮNG CON CHỮ THÔNG OUA VÌ SAO ★
+        </div>
+
+        <h1>Books Of The Star</h1>
+
+        <p class="description">
+            Nơi giới thiệu đến bạn đọc những tựa sách hay và ý nghĩa.<br>⡞⠳⣄⣀⣠⠞⢷ ֹ۪
+        </p>
+
+        <a href="https://sites.google.com/view/booksofthestar/trang-ch%E1%BB%A7/tu-sach-anh-sao"
+           class="button"
+           target="_blank"
+           rel="noopener noreferrer">
+            Tìm Sách Ngay →
+        </a>
+    </div>
+</section>
+
+</body>
+</html>
