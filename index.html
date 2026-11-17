@@ -152,6 +152,101 @@ h1 {
 
     </div>
 </section>
+<!-- BOOKS OF THE STAR - BACKGROUND MUSIC -->
+<div id="star-music-player">
+  <audio id="starMusic" loop preload="auto">
+    <source src="https://dongnghi16999-arch.github.io/books-of-the-star/background.mp3" type="audio/mpeg">
+  </audio>
 
+  <button id="musicToggle" type="button">♫ Bật nhạc</button>
+
+  <div class="music-volume">
+    <span>♪</span>
+    <input
+      id="musicVolume"
+      type="range"
+      min="0"
+      max="1"
+      step="0.05"
+      value="0.25"
+      aria-label="Điều chỉnh âm lượng"
+    >
+  </div>
+</div>
+
+<style>
+  #star-music-player {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid #C9A85C;
+    border-radius: 30px;
+    background: rgba(4, 18, 43, 0.94);
+    color: #F5D98B;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+  }
+
+  #musicToggle {
+    border: none;
+    background: transparent;
+    color: #F5D98B;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .music-volume {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  #musicVolume {
+    width: 65px;
+    accent-color: #C9A85C;
+    cursor: pointer;
+  }
+
+  @media (max-width: 480px) {
+    #star-music-player {
+      right: 10px;
+      bottom: 10px;
+      padding: 9px 12px;
+    }
+  }
+</style>
+
+<script>
+  const music = document.getElementById("starMusic");
+  const toggle = document.getElementById("musicToggle");
+  const volume = document.getElementById("musicVolume");
+
+  music.volume = 0.25;
+
+  toggle.addEventListener("click", async () => {
+    if (music.paused) {
+      try {
+        await music.play();
+        toggle.textContent = "♫ Tắt nhạc";
+      } catch (error) {
+        toggle.textContent = "Không phát được nhạc";
+      }
+    } else {
+      music.pause();
+      toggle.textContent = "♫ Bật nhạc";
+    }
+  });
+
+  volume.addEventListener("input", () => {
+    music.volume = Number(volume.value);
+  });
+</script>
 </body>
 </html>
